@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id ="name" >
+    <input type="number" id ="name1" ><br><br>
+    <button onClick="plus()">ADD</button>
+    <button onClick="minus()">SUBTRACT</button>
+    <button onClick="table()">MULTIPLY</button>
+    <button onClick="bhag()">DIVIDE</button>
+</body>
+</html>
+<script>
+let num1=document.getElementById("name");
+let num2=document.getElementById("name1");
+function plus()
+{
+  alert(Number(num1.value)+Number(num2.value));
+}
+function minus()
+{
+  alert(Number(num1.value)-Number(num2.value));
+}
+function table()
+{
+  alert(Number(num1.value)*Number(num2.value));
+}
+function bhag()
+{
+  alert(Number(num1.value)/Number(num2.value));
+}
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+	<script type="text/javascript">
+        let name1=document.getElementById("name");
+		let gender1=document.getElementById("gender");
+		let email1=document.getElementById("email");
+		let mobile1=document.getElementById("mobile");
+        
+		function showName() {
+            let sin=document.getElementById("dName");
+			let printnew=name1.value;
+			sin.innerText=printnew;
+			
+		}
+
+		function showGender() {
+			let sin=document.getElementById("dGender");
+			let printnew=gender1.value;
+			sin.innerText=printnew;
+		}
+
+		function showEmail() {
+			let sin=document.getElementById("dEmail");
+			let printnew=email1.value;
+			sin.innerText=printnew;
+		}
+
+		function showMobile() {
+			let sin=document.getElementById("dMobile");
+			let printnew=mobile1.value;
+			sin.innerText=printnew;
+		}
+
+		function resetForm() {
+			name1.value="";
+		 gender1.value="";
+		 email1.value="";
+		 mobile1.value="";
+		}
+
+		function resetDisplay() {
+
+			let sin=document.getElementById("dName");
+			let sin1=document.getElementById("dGender");
+			let sin2=document.getElementById("dEmail");
+			let sin3=document.getElementById("dMobile");
+
+		sin.innerText="";
+		 sin1.innerText="";
+		 sin2.innerText="";
+		 sin3.innerText="";
+		}
+	</script>
+</body>
+</html>
