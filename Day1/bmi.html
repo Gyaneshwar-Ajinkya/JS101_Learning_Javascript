@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=hi, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check your BMI</h1>
+    <h2>Enter your weight and height to check your BMI results</h2>
+    <h2>Put your weight in here (KG)</h2>
+    <input type="number" id="weight">
+    <h2>Put your height in here (CM)</h2>
+    <input type="number" id="height"><br> <br>
+    <button onClick="changeH1()">Calculate BMI</button>
+    <h3 id="answer"></h3>
+</body>
+<script>
+    let wajan=document.getElementById("weight");
+    let kad=document.getElementById("height");
+    let answer=document.getElementById("answer");
+
+    function changeH1()
+{
+    let bmi = Number(wajan.value) / Number(kad.value * kad.value);  
+     answer.innerText=bmi;
+
+     if(answer.innerText<=100){
+
+        answer.innerText="Your BMI is"+ " "+ answer.innerText+ " " +"which means you are obese";
+     }
+     
+}
+    </script>
+</html>
