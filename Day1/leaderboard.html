@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+#parent{
+
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    justify-content: space-evenly;
+   
+    
+}
+
+
+
+#parent1{
+
+
+text-align: center;
+margin-top: 50px;
+}
+
+#key{
+display: grid;
+grid-template-columns:repeat(3,1fr) ;
+margin-top: 50px;
+width: 400px;
+ margin: auto;
+ margin-top: 30px;
+ gap: 10px;
+}
+
+#grandparent{
+
+    height: 500px;
+    width:  40%;
+    margin: auto;
+    border: 1px solid gray;
+}
+
+
+
+
+</style>
+
+</head>
+<body>
+<div id="grandparent">
+       <div id="parent">
+        <div>
+            <input type="number" value="35" id="min"> 
+            <h1>MIN</h1>
+        </div>
+       <div>
+        <input type="number" value="200" id="max">
+        <h1>MAX</h1>
+       </div>
+        
+       </div>
+
+       <div id="parent1">
+        <p>SCORE</p>
+        <input type="number" id="result">
+       </div>
+
+    
+        <div id="parent3">
+
+            <div id="key">
+
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>0</button>
+
+            </div>
+          
+
+
+        </div>
+                
+
+       
+
+       
+     <button style="margin-left: 250px;" id="btn">Enter</button>
+
+
+    </div>
+    
+</body>
+</html>
+<script>
+
+ let min=document.getElementById("min");
+ let max=document.getElementById("max");
+ let res=document.getElementById("result");
+ let key=document.querySelectorAll("#parent3>#key>button")
+
+  for(let i=0;i<key.length;i++)
+  {
+    key[i].addEventListener("click",function(){
+
+        res.value += key[i].innerText;
+
+    })
+  }
+
+  document.getElementById("btn").addEventListener("click",function(){
+    if(Number(res.value)<Number(min.value))
+    {
+        min.value=res.value;
+    }
+
+  })
+
+  document.getElementById("btn").addEventListener("click",function(){
+    if(Number(res.value)>Number(max.value))
+    {
+        max.value=res.value;
+    }
+
+  })
+
+
+  document.getElementById("btn").addEventListener("click",function(){
+    if(Number(res.value)>=Number(min.value) && Number(res.value)<=Number(max.value))
+    {
+        res.value=" ";
+    }
+
+  })
+ 
+
+  
+
+
+
+
+
+ 
+
+</script>
