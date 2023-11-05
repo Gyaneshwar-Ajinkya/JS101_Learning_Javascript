@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        img{
+
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="" alt="">
+    <button id="prev"> < </button>
+    <button id="next"> > </button>
+    <h1>Hi</h1>
+    
+</body>
+</html>
+<script>
+    let prev=document.getElementById('prev');
+    let next=document.getElementById('next');
+    let hi=document.querySelector('h1');
+    let im=[
+    
+    "https://images.pexels.com/photos/16354650/pexels-photo-16354650/free-photo-of-beautiful-krishna.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/9261715/pexels-photo-9261715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/6000928/pexels-photo-6000928.jpeg?auto=compress&cs=tinysrgb&w=600",
+    
+    ];
+let present=0;
+let image=document.querySelector('img');
+image.setAttribute('src',im[present]);
+
+prev.addEventListener('click',function(){
+
+   present--;
+   if(present<0)
+   {
+    present=im.length-1;
+   }
+   image.setAttribute('src',im[present]);
+})
+
+next.addEventListener('click',function(){
+ 
+    present++;
+    if(present>=im.length){
+
+        present=0;
+    }
+    image.setAttribute('src',im[present]); 
+})
+
+
+</script>
