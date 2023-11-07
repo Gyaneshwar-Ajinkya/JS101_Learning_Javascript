@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    #container{
+
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+
+    }
+
+   img{
+
+    height: 200px;
+    width: 200px;
+   }
+
+   
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+   
+</body>
+</html>
+<script>
+ let arrobj=[
+
+ {
+   
+  "image":"https://images.pexels.com/photos/9555099/pexels-photo-9555099.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "name":"Redmi Note 30",
+  "price":80000,
+  "Made": "Made in India"
+
+},
+{
+  "image":"https://images.pexels.com/photos/9555099/pexels-photo-9555099.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "name":"TATA Note 30",
+  "price":100000,
+  "Made": "Made in India"
+
+},
+
+{
+  "image":"https://images.pexels.com/photos/9555099/pexels-photo-9555099.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "name":"Vedanta Note 30",
+  "price":100000,
+  "Made": "Made in India"
+
+},
+{
+  "image":"https://images.pexels.com/photos/9555099/pexels-photo-9555099.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "name":"Krishna Note 30",
+  "price":100000,
+  "Made": "Made in India"
+
+},
+{
+  "image":"https://images.pexels.com/photos/9555099/pexels-photo-9555099.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "name":"Radhe Note 30",
+  "price":100000,
+  "Made": "Made in India"
+
+},
+{
+  "image":"https://images.pexels.com/photos/9555099/pexels-photo-9555099.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "name":"Sudama Note 30",
+  "price":100000,
+  "Made": "Made in India"
+
+},
+
+
+ ];
+
+
+ 
+ let cont=document.getElementById('container')
+ arrobj.map((ele)=>{
+    let  con=document.createElement('div');
+    let image=document.createElement('img');
+    let pname=document.createElement('h1');
+    let priname=document.createElement('h3');
+    let oname=document.createElement('h2');
+    
+    image.setAttribute('src',ele.image);
+    pname.innerText=ele.name;
+    priname.innerText=ele.price;
+    oname.innerText=ele.Made;
+   
+    con.append(image,pname,priname,oname);
+    cont.append(con);
+
+
+ })
+
+
+</script>
+

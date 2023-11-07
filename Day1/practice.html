@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+ let arr=[
+
+"Hare Krishna",
+"Hey Keshav",
+"Radhe Radhe",
+"Jay Murli",
+"Hey Murari"
+]   
+ let head=document.createElement('h1');
+ let head1=document.createElement('h1');
+ head1.innerText="Radhe Radhe";
+ head.innerText="Bhagwan Shri Krishna";
+ let btn=document.createElement('button');
+ btn.innerText="Hello";
+ document.querySelector('body').append(head,btn,head1);
+
+arr.map((ele)=>{
+
+  let heading=document.createElement('h1');
+  heading.innerText=ele;
+  document.querySelector('body').append(heading);
+
+})
+</script>
