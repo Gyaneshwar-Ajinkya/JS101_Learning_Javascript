@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+function CreateAccount(name,accountNumber,balance,type){
+ 
+ this.name=name;
+ this.accountNumber=accountNumber;
+ this.balance=balance;
+ this.type=type;
+ this.deposite=  function(amount){
+
+this.balance=this.balance+amount;
+
+
+    
+}
+this.withdraw=function(amount){
+
+
+if(amount<=this.balance){
+  
+    this.balance=this.balance-amount;
+    console.log("Successfully withdrawn",amount)
+}else{
+    console.log("You have insufficient balance",this.balance)
+}
+}
+
+this.getTotalBalance=function(){
+
+    console.log("Your total balace is",this.balance);
+}
+
+this.isActive=function(){
+
+   true;
+}
+}
+
+
+let account1= new CreateAccount("Krishna",344334,1000,"Current");
+
+let account2= new CreateAccount("Radhe",344334,1000,"Current");
+
+let account3= new CreateAccount("Ajinkya",344334,1000,"Current");
+
+
+let accounts=[account1,account2,account3];
+
+let total=0;
+
+for(let i=0;i<accounts.length;i++){
+
+    total+=accounts[i].balance;
+
+}
+
+console.log(total);
+
+
+
+</script>

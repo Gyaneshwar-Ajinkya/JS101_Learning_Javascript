@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function Author (name,birthYear,nationality ){
+     
+        this.name=name;
+        this.birthYear=birthYear;
+        this.nationality=nationality;
+
+    }
+
+    function Book (title,author,genre,price){
+
+        this.title=title;
+        this.author=author;
+        this.genre=genre;
+        this.price=price;
+       
+
+        this.getBookInfo =function(){
+        
+        this.title=title;
+        this.author=author;
+        this.genre=genre;
+        this.price=price;
+
+        }
+
+    }
+    //getBookInfo - to print the book's title, author's name, genre, and price.//
+
+    let Author1= new Author("Krishna",1997,"Mathura");
+    let Author2= new Author("Ajinkya",1997,"Mathura");
+    let Author3= new Author("Ajinkya",1997,"Mathura");
+
+
+    let Book1= new Book("Gita",Author1,"rr",2000);
+    let Book2= new Book("Focus",Author2,"rr",2000);
+    let Book3= new Book("Dhyan",Author2,"rr",2000);
+
+    let Bookstore=[Book1,Book2,Book3];
+
+    console.log(Bookstore);
+
+
+  
+
+    
+
+
+  
+</script>

@@ -12,21 +12,54 @@
         margin: auto;
         display: grid;
         grid-template-columns: repeat(3,1fr);
+        align-items: center;        
+        gap: 15px;
+        
+        
+        
 
     }
+
+    #container>div{
+
+border: 2px solid green;
+
+
+
+
+
+}
 
    img{
 
     height: 200px;
     width: 200px;
+    
+
    }
 
    
+   #main{
 
+    color:blue;
+    text-align: center;
+    
+
+   }
+
+   button{
+
+    height: 30px;
+    width: 35;
+    
+    background-color: greenyellow;
+   }
 
     </style>
 </head>
 <body>
+
+  <h1 id="main">Ajinkya Ecommerce Website</h1>
     <div id="container">
 
     </div>
@@ -84,6 +117,8 @@
 
  ];
 
+ 
+ 
 
  
  let cont=document.getElementById('container')
@@ -93,18 +128,23 @@
     let pname=document.createElement('h1');
     let priname=document.createElement('h3');
     let oname=document.createElement('h2');
+    let btn=document.createElement('button');
+    btn.textContent="Add to Cart";
+
+   
     
     image.setAttribute('src',ele.image);
     pname.innerText=ele.name;
     priname.innerText=ele.price;
     oname.innerText=ele.Made;
    
-    con.append(image,pname,priname,oname);
+    con.append(image,pname,priname,oname,btn);
     cont.append(con);
 
 
  })
 
+ 
 
 </script>
 
