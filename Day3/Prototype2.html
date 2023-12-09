@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hellow World
+</body>
+</html>
+<script>
+    
+let automobilePrototype = {
+  start() {
+    console.log(`${this.make} ${this.model} is starting.`);
+  },
+  stop() {
+    console.log(`${this.make} ${this.model} is stopping.`);
+  },
+  drive() {
+    console.log(`${this.make} ${this.model} is now being driven.`);
+  }
+};
+
+
+
+
+function FourWheeler(make, model, year) {
+  let fourWheeler = Object.create(automobilePrototype);
+  fourWheeler.make = make;
+  fourWheeler.model = model;
+  fourWheeler.year = year;
+  return fourWheeler;
+}
+
+
+let myCar = FourWheeler('Toyota', 'Camry', 2022);
+
+
+myCar.start();
+myCar.drive();
+myCar.stop();
+
+
+
+
+
+</script>
