@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #slideshow-container {
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #prev, #next, #toggle {
+            cursor: pointer;
+            font-size: 20px;
+            padding: 10px;
+            background-color: #ddd;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="slideshow-container">
+    <div class="slide">
+        <img src="https://via.placeholder.com/600x300/ff0000/ffffff?text=1" alt="Slide 1">
+    </div>
+    <!-- Add more slides with different images -->
+
+    <div class="slide">
+        <img src="https://via.placeholder.com/600x300/00ff00/000000?text=2" alt="Slide 2">
+    </div>
+
+    <!-- Repeat similar blocks for additional slides -->
+
+    <button id="prev" onclick="prevSlide()">Previous</button>
+    <button id="toggle" onclick="toggleSlideshow()">Start</button>
+    <button id="next" onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+    let slideshowInterval;
+    let isSlideshowRunning = false;
+
+    const slides = document.querySelectorAll('.slide');
+    const toggleButton = document.getElementById('toggle');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.style.display = 'block';
+            } else {
+                slide.style.display = 'none';
+            }
+        });
+    }
+
+    function nextSlide() {
+        clearInterval(slideshowInterval);
+        isSlideshowRunning = false;
+
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        clearInterval(slideshowInterval);
+        isSlideshowRunning = false;
+
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function toggleSlideshow() {
+        if (isSlideshowRunning) {
+            clearInterval(slideshowInterval);
+            toggleButton.textContent = 'Start';
+        } else {
+            slideshowInterval = setInterval(nextSlide, 2000); // Change slide every 2 seconds
+            toggleButton.textContent = 'Stop';
+        }
+
+        isSlideshowRunning = !isSlideshowRunning;
+    }
+
+    showSlide(currentIndex); // Show the first slide initially
+</script>
+
+</body>
+</html>
