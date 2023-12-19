@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: rgb(6, 185, 217);">McDonalds Ordering Platform</h1>
+ 
+    <div style="color: green;" id="status">
+
+     <div id="imageCont">
+
+     </div>
+
+    </div>
+
+
+    <div id="foodItems">
+    
+        <label>Burger</label>
+        <input type="checkbox" value="Burger"><br><br>
+    
+        <label>Fries</label>
+        <input type="checkbox" value="Fries"><br><br>
+    
+        <label>Pasta</label>
+        <input type="checkbox" value="Pasta"><br><br>
+
+    </div>
+    
+
+    <button onclick="orderfood()">Order Food</button>
+
+    
+</body>
+</html>
+
+<script>
+
+    let foodItems= document.querySelectorAll("#foodItems input");
+    let status=document.querySelector("#status");
+    let image=document.querySelector("#imageCont");
+ 
+    
+    let items=Array.from(foodItems);
+
+   function orderfood(){
+
+  let h1=document.createElement("h1");
+  h1.innerText="Food is being ordered.....";
+   
+  status.append(h1);
+   
+  promiseCreate(items).then((res)=>{
+
+    console.log(res);
+
+    h1.innerText=`${res} has been ordered Sucessfully`;
+})
+
+ }
+
+function promiseCreate(items){
+
+
+    let imageCont =document.querySelector("#imageCont");
+
+    let images =[
+
+     {
+       name:"Burger",
+       url:"https://cdn.pixabay.com/photo/2016/03/05/19/02/abstract-1238247_1280.jpg"
+       
+
+     },
+     
+     {
+       name:"Fries",
+       url:"https://cdn.pixabay.com/photo/2016/11/21/15/52/french-fries-1846083_1280.jpg"
+
+     },
+
+     {
+       name:"Pasta",
+       url:"https://cdn.pixabay.com/photo/2016/11/23/18/31/pasta-1854245_1280.jpg"
+
+     },
+
+    ]
+
+
+
+     let checkedItems =items.filter((ele)=>{
+      return ele.checked
+    })
+
+    let imageFilter = images.filter((ele)=>{
+
+        return ele.name == checkedItems[0].value
+    })
+
+    let image = document.createElement("img");
+
+    image.src = imageFilter[0].url;
+
+    image.style.width ="200px"
+
+    imageCont.append(image)
+
+
+      let promise= new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+
+    
+     resolve(checkedItems[0].value)
+},2000)
+
+})
+   
+    return promise
+
+   }
+
+
+</script>
